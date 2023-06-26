@@ -49,7 +49,7 @@ function RecommendList() {
       try {
         const response = await axios.get('http://apis.data.go.kr/3330000/HeaundaeTourAttrInfoService/getTourAttrList', {
           params: {
-            ServiceKey: 'YOUR_API_KEY',
+            ServiceKey: 'Rs3jfij5y64eUJdCopviVKd4%2BINdhHvUd%2FOmN%2FKLpWyY3eEx3X0y1%2Bvf7JECwfptVWyyjAZw10bXLVypcu1qIA%3D%3D',
             numOfRows: 5, // 가져올 여행지 개수 설정
             pageNo: 1, // 페이지 번호 설정
             MobileOS: 'ETC',
@@ -58,7 +58,7 @@ function RecommendList() {
           },
         });
 
-        const data = response.data.response.body.items.item;
+        const data = response.data.getTourAttrList.item;
         setDestinations(data);
       } catch (error) {
         console.error(error);

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Date_t from './Date_t';
 import Map from './Map';
+import SelectedAreas from './SelectedAreas'; // Import the new component
 
 const Container = styled.div`
   margin: 0 150px;
@@ -36,6 +37,7 @@ const NextButton = styled.button`
 function Choose_area(props) {
   const { startDate, endDate } = props;
   const [selectedRegions, setSelectedRegions] = useState([]);
+  const [showSelectedRegions, setShowSelectedRegions] = useState(false);
 
   const handleRegionSelect = (region) => {
     if (selectedRegions.includes(region)) {
@@ -46,10 +48,14 @@ function Choose_area(props) {
   };
 
   const handleNext = () => {
-    // 이곳에 다음 버튼 클릭 시 수행할 로직을 작성하세요.
-    // 예시로 선택된 지역들을 출력하는 로직을 작성했습니다.
-    console.log('선택된 지역:', selectedRegions);
+    setShowSelectedRegions(true);
   };
+
+  if (showSelectedRegions) {
+    return (
+      <SelectedAreas startDate={startDate} endDate={endDate} selectedRegions={selectedRegions} />
+    );
+  }
 
   return (
     <Container>
