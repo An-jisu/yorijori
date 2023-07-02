@@ -1,4 +1,4 @@
-# yorijori 졸업 프로젝트 <br style="text-align:center">
+# <yorijori 졸업 프로젝트> <br>
 ## ⭕ 프로젝트 주제: <br>
 
 ## 👑 프로젝트 목적과 기대 효과:  <br>
