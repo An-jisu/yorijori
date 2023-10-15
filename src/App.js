@@ -12,7 +12,7 @@ function App() {
           <Route path="/" element={<Main/>} />
           <Route path="/mylist" element={<MyList/>} />
           <Route path="/selectplace" element={<SelectPlace/>} />
-          <Route path="/showroute" element={<ShowRoute/>} />
+          <Route path="/showroute/:key" element={<ShowRoute/>} />
         </Routes>
       </Router>
     </div>
