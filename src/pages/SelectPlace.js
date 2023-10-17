@@ -239,7 +239,7 @@ const Content=styled.div`
     display: flex;
     flex-direction: column;
     justify-content:center;
-    align-items:center;
+    //align-items:center;
     white-space: pre-line;
 `
 const DetailTitle=styled.div`
@@ -255,9 +255,9 @@ const DetailTitle=styled.div`
 const Label=styled.div`
     color: #000;
     font-family: Inter;
-    font-size: 20px;
+    font-size: 17px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 24px; 
     margin-bottom: 10px;
 
@@ -297,9 +297,11 @@ const Button=styled.div`
 `
 const ContainerList=styled.div`
     border: 1px solid black;
+    border-radius: 10px;
     padding: 20px;
+    margin-bottom: 30px;
     width: 300px;    
-    height: 150px;
+    height: 50px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -321,6 +323,12 @@ const PlaceName=styled.div`
     font-style: normal;
     font-weight: 700;
 `
+const StartTime=styled.input`
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    padding-left: 20px;
+`
 
 function SelectPlace() {
     const [selectedPlaces, setSelectedPlaces] = useState([]);
@@ -332,6 +340,7 @@ function SelectPlace() {
     const [position, setPosition] = useState({ lat: 33.5261, lng: 126.5434 });
     const [isGetStart, setIsGetStart] = useState(false);
     const [start, setStart] = useState([]);
+    const [startTime, setStartTime] = useState(1);
     const navigate = useNavigate();
     // const data = [[126.8634,  33.5235],
     // [126.9341,  33.4729],
@@ -365,6 +374,10 @@ function SelectPlace() {
     const handleInput = (e)=> {
         setName(e.target.value);
     };
+
+    const hanleStartTime= (e)=>{
+        setStartTime(e.target.value);
+    }
 
     const handleStartPoint=() =>{
         async function fetch() {
@@ -485,6 +498,8 @@ function SelectPlace() {
                                     <PlaceName onClick={()=>setStart([data['중심관광지명'], data['위도'], data['경도']])}>{data['중심관광지명']}</PlaceName>
                                 ))}
                                 </ContainerList>
+                                <Label>출발 시간을 입력해주세요.</Label>
+                                {/* <StartTime placeholder={'8~22사이의 숫자로'} onChange={hanleStartTime} value={startTime}></StartTime> */}
                             </Content>
                             <ButtonContainer>
                                 <Button onClick={handleStartPoint}>확인</Button>
