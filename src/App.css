@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Cafe24Ssurround-v2.0";
+  src: url("./assets/font/Cafe24Ssurround-v2.0.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "나눔손글씨 연지체";
+  src: url("./assets/font/나눔손글씨 연지체.ttf");
+  font-weight: 700;
+}

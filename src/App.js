@@ -1,4 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import "./App.css";
 import Main from "./pages/Main";
 import MyList from "./pages/MyList";
 import SelectPlace from "./pages/SelectPlace";
@@ -9,10 +10,10 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route path="/" element={<Main/>} />
-          <Route path="/mylist" element={<MyList/>} />
-          <Route path="/selectplace" element={<SelectPlace/>} />
-          <Route path="/showroute/:key" element={<ShowRoute/>} />
+          <Route path="/" element={<Main />} />
+          <Route path="/mylist" element={<MyList />} />
+          <Route path="/selectplace" element={<SelectPlace />} />
+          <Route path="/showroute/:key" element={<ShowRoute />} />
         </Routes>
       </Router>
     </div>
